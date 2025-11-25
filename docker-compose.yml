@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+ mammamia:
+    build: https://github.com/UrloMythus/MammaMia.git#main
+    container_name: mammamia
+     env_file:
+       - ./xfilex5/.env
+    restart: unless-stopped 
+    ports:
+      - "8081:8081"
