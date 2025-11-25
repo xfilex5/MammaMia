@@ -4,6 +4,7 @@ services:
  mammamia:
     build: https://github.com/xfilex5/MammaMia.git#main
     container_name: mammamamia
+    dockerfile: Dockerfile
     restart: unless-stopped 
     ports:
       - "8081:8081"  # Mappa la porta del container alla macchina host
