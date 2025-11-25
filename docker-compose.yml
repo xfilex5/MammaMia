@@ -3,9 +3,13 @@ version: '3.8'
 services:
  mammamia:
     build: https://github.com/xfilex5/MammaMia.git#main
-    container_name: mammamia
-     env_file:
-       - ./xfilex5/.env
+    container_name: mammamamia
     restart: unless-stopped 
     ports:
-      - "8081:8081"
+      - "8081:8081"  # Mappa la porta del container alla macchina host
+    environment:
+      TMDB_KEY: "!!!tuachiavetmdb"  # Puoi sostituire con un valore reale o passarlo tramite .env
+      PROXY: "[\"!!!tuoproxyrotate\"]"
+    volumes:
+      - ./xfilex5/MammaMia/config.json:/app/config.json
+
